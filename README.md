@@ -5,13 +5,13 @@
 # Changes
 
 **Fixes:**  
-✔️ Dependency updates jhomlala/betterplayer#1291
-✔️ Changed Gradle Wrapper version to v7.5
-✔️ Changed Gradle Build Tool version to v7.4.2
-✔️ Changed Kotlin Plugin version to v1.8.10
+✔️ Dependency updates jhomlala/betterplayer#1291  
+✔️ Changed Gradle Wrapper version to v7.5  
+✔️ Changed Gradle Build Tool version to v7.4.2  
+✔️ Changed Kotlin Plugin version to v1.8.10  
 
 **Features:**
-✔️ Added Persian language support jhomlala/betterplayer#1250
+✔️ Added Persian language support jhomlala/betterplayer#1250  
 
 # River Player
 
