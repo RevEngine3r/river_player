@@ -2,6 +2,9 @@
 <img src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/logo.png">
 </p>
 
+This is the same good old Better Player with fixed and updates,
+Because the publisher of Better Player doesn't maintain it anymore.
+
 # Changes
 
 **Fixes:**  
@@ -18,9 +21,6 @@
 [![pub package](https://img.shields.io/pub/v/better_player.svg)](https://pub.dartlang.org/packages/better_player)
 [![pub package](https://img.shields.io/github/license/jhomlala/betterplayer.svg?style=flat)](https://github.com/RevEngine3r/river_player)
 [![pub package](https://img.shields.io/badge/platform-flutter-blue.svg)](https://github.com/RevEngine3r/river_player)
-
-This is the same good old Better Player with fixed and updates,
-Because the publisher of Better Player doesn't maintain it anymore.
 
 Advanced video player based on video_player and Chewie. It's solves many typical use cases and it's
 easy to run.
