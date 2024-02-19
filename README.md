@@ -10,7 +10,7 @@
 ✔️ Changed Gradle Build Tool version to v7.4.2  
 ✔️ Changed Kotlin Plugin version to v1.8.10  
 
-**Features:**
+**Features:**  
 ✔️ Added Persian language support jhomlala/betterplayer#1250  
 
 # River Player
