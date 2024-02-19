@@ -5,10 +5,11 @@
 // Dart imports:
 import 'dart:async';
 
-// Flutter imports:
-import 'package:better_player/src/configuration/better_player_buffering_configuration.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+// Flutter imports:
+import 'package:river_player/src/configuration/better_player_buffering_configuration.dart';
+
 import 'method_channel_video_player.dart';
 
 /// The interface that implementations of video_player must implement.
@@ -22,7 +23,7 @@ abstract class VideoPlayerPlatform {
   /// Only mock implementations should set this to true.
   ///
   /// Mockito mocks are implementing this class with `implements` which is forbidden for anything
-  /// other than mocks (see class docs). This property provides a backdoor for mockito mocks to
+  /// other than mocks (see class doc). This property provides a backdoor for mockito mocks to
   /// skip the verification that the class isn't implemented with `implements`.
   @visibleForTesting
   bool get isMock => false;
@@ -174,7 +175,7 @@ abstract class VideoPlayerPlatform {
 
   // This method makes sure that VideoPlayer isn't implemented with `implements`.
   //
-  // See class docs for more details on why implementing this class is forbidden.
+  // See class doc for more details on why implementing this class is forbidden.
   //
   // This private method is called by the instance setter, which fails if the class is
   // implemented with `implements`.

@@ -1,11 +1,12 @@
 import 'dart:io';
 import 'dart:math';
-import 'package:better_player/better_player.dart';
-import 'package:better_player/src/controls/better_player_clickable_widget.dart';
-import 'package:better_player/src/core/better_player_utils.dart';
+
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:river_player/river_player.dart';
+import 'package:river_player/src/controls/better_player_clickable_widget.dart';
+import 'package:river_player/src/core/better_player_utils.dart';
 
 ///Base class for both material and cupertino controls
 abstract class BetterPlayerControlsState<T extends StatefulWidget>

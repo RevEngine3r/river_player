@@ -1,6 +1,6 @@
-import 'package:better_player/better_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:river_player/river_player.dart';
 
 ///UI configuration of Better Player. Allows to change colors/icons/behavior
 ///of controls. Used in BetterPlayerConfiguration. Configuration applies only
@@ -240,8 +240,8 @@ class BetterPlayerControlsConfiguration {
   ///Setup BetterPlayerControlsConfiguration based on Theme options.
   factory BetterPlayerControlsConfiguration.theme(ThemeData theme) {
     return BetterPlayerControlsConfiguration(
-      textColor: theme.textTheme.bodyText1?.color ?? Colors.white,
-      iconsColor: theme.textTheme.button?.color ?? Colors.white,
+      textColor: theme.textTheme.bodyLarge?.color ?? Colors.white,
+      iconsColor: theme.textTheme.labelLarge?.color ?? Colors.white,
     );
   }
 }

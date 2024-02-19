@@ -1,4 +1,4 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.content.Context
 import android.util.Log
@@ -8,12 +8,12 @@ import com.google.android.exoplayer2.database.ExoDatabaseProvider
 import java.io.File
 import java.lang.Exception
 
-object BetterPlayerCache {
+object RiverPlayerCache {
     @Volatile
     private var instance: SimpleCache? = null
     fun createCache(context: Context, cacheFileSize: Long): SimpleCache? {
         if (instance == null) {
-            synchronized(BetterPlayerCache::class.java) {
+            synchronized(RiverPlayerCache::class.java) {
                 if (instance == null) {
                     instance = SimpleCache(
                         File(context.cacheDir, "betterPlayerCache"),

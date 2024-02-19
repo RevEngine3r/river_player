@@ -1,5 +1,5 @@
-import 'package:better_player/better_player.dart';
-import 'package:better_player/src/video_player/video_player.dart';
+import 'package:river_player/river_player.dart';
+import 'package:river_player/src/video_player/video_player.dart';
 
 import 'better_player_mock_controller.dart';
 import 'mock_video_player_controller.dart';

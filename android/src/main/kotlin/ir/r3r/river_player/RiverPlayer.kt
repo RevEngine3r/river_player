@@ -1,10 +1,9 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -13,9 +12,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
-import com.jhomlala.better_player.DataSourceUtils.getUserAgent
-import com.jhomlala.better_player.DataSourceUtils.isHTTP
-import com.jhomlala.better_player.DataSourceUtils.getDataSourceFactory
+import ir.r3r.river_player.DataSourceUtils.getUserAgent
+import ir.r3r.river_player.DataSourceUtils.isHTTP
+import ir.r3r.river_player.DataSourceUtils.getDataSourceFactory
 import io.flutter.plugin.common.EventChannel
 import io.flutter.view.TextureRegistry.SurfaceTextureEntry
 import io.flutter.plugin.common.MethodChannel
@@ -32,7 +31,6 @@ import com.google.android.exoplayer2.drm.FrameworkMediaDrm
 import com.google.android.exoplayer2.drm.UnsupportedDrmException
 import com.google.android.exoplayer2.drm.DummyExoMediaDrm
 import com.google.android.exoplayer2.drm.LocalMediaDrmCallback
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ClippingMediaSource
 import com.google.android.exoplayer2.ui.PlayerNotificationManager.MediaDescriptionAdapter
@@ -51,13 +49,11 @@ import com.google.android.exoplayer2.source.hls.HlsMediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import io.flutter.plugin.common.EventChannel.EventSink
-import androidx.media.session.MediaButtonReceiver
 import androidx.work.Data
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.drm.DrmSessionManagerProvider
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
-import com.google.android.exoplayer2.trackselection.DefaultTrackSelector.SelectionOverride
 import com.google.android.exoplayer2.trackselection.TrackSelectionOverrides
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
@@ -69,7 +65,7 @@ import java.util.*
 import kotlin.math.max
 import kotlin.math.min
 
-internal class BetterPlayer(
+internal class RiverPlayer(
     context: Context,
     private val eventChannel: EventChannel,
     private val textureEntry: SurfaceTextureEntry,
@@ -249,7 +245,7 @@ internal class BetterPlayer(
                     .addTag(imageUrl)
                     .setInputData(
                         Data.Builder()
-                            .putString(BetterPlayerPlugin.URL_PARAMETER, imageUrl)
+                            .putString(RiverPlayerPlugin.URL_PARAMETER, imageUrl)
                             .build()
                     )
                     .build()
@@ -261,7 +257,7 @@ internal class BetterPlayer(
                             if (state == WorkInfo.State.SUCCEEDED) {
                                 val outputData = workInfo.outputData
                                 val filePath =
-                                    outputData.getString(BetterPlayerPlugin.FILE_PATH_PARAMETER)
+                                    outputData.getString(RiverPlayerPlugin.FILE_PATH_PARAMETER)
                                 //Bitmap here is already processed and it's very small, so it won't
                                 //break anything.
                                 bitmap = BitmapFactory.decodeFile(filePath)
@@ -748,7 +744,7 @@ internal class BetterPlayer(
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || javaClass != other.javaClass) return false
-        val that = other as BetterPlayer
+        val that = other as RiverPlayer
         if (if (exoPlayer != null) exoPlayer != that.exoPlayer else that.exoPlayer != null) return false
         return if (surface != null) surface == that.surface else that.surface == null
     }
@@ -803,16 +799,16 @@ internal class BetterPlayer(
             cacheKey: String?, result: MethodChannel.Result
         ) {
             val dataBuilder = Data.Builder()
-                .putString(BetterPlayerPlugin.URL_PARAMETER, dataSource)
-                .putLong(BetterPlayerPlugin.PRE_CACHE_SIZE_PARAMETER, preCacheSize)
-                .putLong(BetterPlayerPlugin.MAX_CACHE_SIZE_PARAMETER, maxCacheSize)
-                .putLong(BetterPlayerPlugin.MAX_CACHE_FILE_SIZE_PARAMETER, maxCacheFileSize)
+                .putString(RiverPlayerPlugin.URL_PARAMETER, dataSource)
+                .putLong(RiverPlayerPlugin.PRE_CACHE_SIZE_PARAMETER, preCacheSize)
+                .putLong(RiverPlayerPlugin.MAX_CACHE_SIZE_PARAMETER, maxCacheSize)
+                .putLong(RiverPlayerPlugin.MAX_CACHE_FILE_SIZE_PARAMETER, maxCacheFileSize)
             if (cacheKey != null) {
-                dataBuilder.putString(BetterPlayerPlugin.CACHE_KEY_PARAMETER, cacheKey)
+                dataBuilder.putString(RiverPlayerPlugin.CACHE_KEY_PARAMETER, cacheKey)
             }
             for (headerKey in headers.keys) {
                 dataBuilder.putString(
-                    BetterPlayerPlugin.HEADER_PARAMETER + headerKey,
+                    RiverPlayerPlugin.HEADER_PARAMETER + headerKey,
                     headers[headerKey]
                 )
             }

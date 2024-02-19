@@ -1,4 +1,4 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.content.Context
 import com.google.android.exoplayer2.upstream.DataSource
@@ -16,7 +16,7 @@ internal class CacheDataSourceFactory(
 ) : DataSource.Factory {
     private var defaultDatasourceFactory: DefaultDataSource.Factory? = null
     override fun createDataSource(): CacheDataSource {
-        val betterPlayerCache = BetterPlayerCache.createCache(context, maxCacheSize)
+        val betterPlayerCache = RiverPlayerCache.createCache(context, maxCacheSize)
             ?: throw IllegalStateException("Cache can't be null.")
 
         return CacheDataSource(

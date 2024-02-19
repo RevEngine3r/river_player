@@ -1,7 +1,7 @@
 // Copyright 2017 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.app.Activity
 import android.app.PictureInPictureParams
@@ -12,7 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.util.LongSparseArray
-import com.jhomlala.better_player.BetterPlayerCache.releaseCache
+import ir.r3r.river_player.RiverPlayerCache.releaseCache
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
@@ -30,8 +30,8 @@ import java.util.HashMap
 /**
  * Android platform implementation of the VideoPlayerPlugin.
  */
-class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
-    private val videoPlayers = LongSparseArray<BetterPlayer>()
+class RiverPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
+    private val videoPlayers = LongSparseArray<RiverPlayer>()
     private val dataSources = LongSparseArray<Map<String, Any?>>()
     private var flutterState: FlutterState? = null
     private var currentNotificationTextureId: Long = -1
@@ -115,7 +115,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
                         call.argument(BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS)
                     )
                 }
-                val player = BetterPlayer(
+                val player = RiverPlayer(
                     flutterState?.applicationContext!!, eventChannel, handle,
                     customDefaultLoadControl, result
                 )
@@ -144,7 +144,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
         call: MethodCall,
         result: MethodChannel.Result,
         textureId: Long,
-        player: BetterPlayer
+        player: RiverPlayer
     ) {
         when (call.method) {
             SET_DATA_SOURCE_METHOD -> {
@@ -227,7 +227,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
     private fun setDataSource(
         call: MethodCall,
         result: MethodChannel.Result,
-        player: BetterPlayer
+        player: RiverPlayer
     ) {
         val dataSource = call.argument<Map<String, Any?>>(DATA_SOURCE_PARAMETER)!!
         dataSources.put(getTextureId(player)!!, dataSource)
@@ -315,7 +315,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
             val cacheKey = getParameter<String?>(dataSource, CACHE_KEY_PARAMETER, null)
             val headers: Map<String, String> =
                 getParameter(dataSource, HEADERS_PARAMETER, HashMap())
-            BetterPlayer.preCache(
+            RiverPlayer.preCache(
                 flutterState?.applicationContext,
                 uri,
                 preCacheSize,
@@ -336,14 +336,14 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
      */
     private fun stopPreCache(call: MethodCall, result: MethodChannel.Result) {
         val url = call.argument<String>(URL_PARAMETER)
-        BetterPlayer.stopPreCache(flutterState?.applicationContext, url, result)
+        RiverPlayer.stopPreCache(flutterState?.applicationContext, url, result)
     }
 
     private fun clearCache(result: MethodChannel.Result) {
-        BetterPlayer.clearCache(flutterState?.applicationContext, result)
+        RiverPlayer.clearCache(flutterState?.applicationContext, result)
     }
 
-    private fun getTextureId(betterPlayer: BetterPlayer): Long? {
+    private fun getTextureId(betterPlayer: RiverPlayer): Long? {
         for (index in 0 until videoPlayers.size()) {
             if (betterPlayer === videoPlayers.valueAt(index)) {
                 return videoPlayers.keyAt(index)
@@ -352,7 +352,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
         return null
     }
 
-    private fun setupNotification(betterPlayer: BetterPlayer) {
+    private fun setupNotification(betterPlayer: RiverPlayer) {
         try {
             val textureId = getTextureId(betterPlayer)
             if (textureId != null) {
@@ -406,7 +406,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
             .hasSystemFeature(PackageManager.FEATURE_PICTURE_IN_PICTURE)
     }
 
-    private fun enablePictureInPicture(player: BetterPlayer) {
+    private fun enablePictureInPicture(player: RiverPlayer) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             player.setupMediaSession(flutterState!!.applicationContext)
             activity!!.enterPictureInPictureMode(PictureInPictureParams.Builder().build())
@@ -415,14 +415,14 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
         }
     }
 
-    private fun disablePictureInPicture(player: BetterPlayer) {
+    private fun disablePictureInPicture(player: RiverPlayer) {
         stopPipHandler()
         activity!!.moveTaskToBack(false)
         player.onPictureInPictureStatusChanged(false)
         player.disposeMediaSession()
     }
 
-    private fun startPictureInPictureListenerTimer(player: BetterPlayer) {
+    private fun startPictureInPictureListenerTimer(player: RiverPlayer) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             pipHandler = Handler(Looper.getMainLooper())
             pipRunnable = Runnable {
@@ -438,7 +438,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
         }
     }
 
-    private fun dispose(player: BetterPlayer, textureId: Long) {
+    private fun dispose(player: RiverPlayer, textureId: Long) {
         player.dispose()
         videoPlayers.remove(textureId)
         dataSources.remove(textureId)
@@ -470,7 +470,7 @@ class BetterPlayerPlugin : FlutterPlugin, ActivityAware, MethodCallHandler {
     ) {
         private val methodChannel: MethodChannel = MethodChannel(binaryMessenger, CHANNEL)
 
-        fun startListening(methodCallHandler: BetterPlayerPlugin?) {
+        fun startListening(methodCallHandler: RiverPlayerPlugin?) {
             methodChannel.setMethodCallHandler(methodCallHandler)
         }
 

@@ -1,11 +1,11 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.content.Context
 import android.net.Uri
 import android.util.Log
-import com.jhomlala.better_player.DataSourceUtils.isHTTP
-import com.jhomlala.better_player.DataSourceUtils.getUserAgent
-import com.jhomlala.better_player.DataSourceUtils.getDataSourceFactory
+import ir.r3r.river_player.DataSourceUtils.isHTTP
+import ir.r3r.river_player.DataSourceUtils.getUserAgent
+import ir.r3r.river_player.DataSourceUtils.getDataSourceFactory
 import androidx.work.WorkerParameters
 import com.google.android.exoplayer2.upstream.cache.CacheWriter
 import androidx.work.Worker
@@ -27,16 +27,16 @@ class CacheWorker(
     override fun doWork(): Result {
         try {
             val data = inputData
-            val url = data.getString(BetterPlayerPlugin.URL_PARAMETER)
-            val cacheKey = data.getString(BetterPlayerPlugin.CACHE_KEY_PARAMETER)
-            val preCacheSize = data.getLong(BetterPlayerPlugin.PRE_CACHE_SIZE_PARAMETER, 0)
-            val maxCacheSize = data.getLong(BetterPlayerPlugin.MAX_CACHE_SIZE_PARAMETER, 0)
-            val maxCacheFileSize = data.getLong(BetterPlayerPlugin.MAX_CACHE_FILE_SIZE_PARAMETER, 0)
+            val url = data.getString(RiverPlayerPlugin.URL_PARAMETER)
+            val cacheKey = data.getString(RiverPlayerPlugin.CACHE_KEY_PARAMETER)
+            val preCacheSize = data.getLong(RiverPlayerPlugin.PRE_CACHE_SIZE_PARAMETER, 0)
+            val maxCacheSize = data.getLong(RiverPlayerPlugin.MAX_CACHE_SIZE_PARAMETER, 0)
+            val maxCacheFileSize = data.getLong(RiverPlayerPlugin.MAX_CACHE_FILE_SIZE_PARAMETER, 0)
             val headers: MutableMap<String, String> = HashMap()
             for (key in data.keyValueMap.keys) {
-                if (key.contains(BetterPlayerPlugin.HEADER_PARAMETER)) {
+                if (key.contains(RiverPlayerPlugin.HEADER_PARAMETER)) {
                     val keySplit =
-                        key.split(BetterPlayerPlugin.HEADER_PARAMETER.toRegex()).toTypedArray()[0]
+                        key.split(RiverPlayerPlugin.HEADER_PARAMETER.toRegex()).toTypedArray()[0]
                     headers[keySplit] = Objects.requireNonNull(data.keyValueMap[key]) as String
                 }
             }

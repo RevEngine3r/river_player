@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:better_player/src/core/better_player_utils.dart';
-import 'package:better_player/src/dash/better_player_dash_utils.dart';
-import 'package:better_player/src/hls/better_player_hls_utils.dart';
+
+import 'package:river_player/src/core/better_player_utils.dart';
+import 'package:river_player/src/dash/better_player_dash_utils.dart';
+import 'package:river_player/src/hls/better_player_hls_utils.dart';
 
 import 'better_player_asms_data_holder.dart';
 

@@ -1,22 +1,22 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:better_player/src/hls/hls_parser/drm_init_data.dart';
-import 'package:better_player/src/hls/hls_parser/exception.dart';
-import 'package:better_player/src/hls/hls_parser/format.dart';
-import 'package:better_player/src/hls/hls_parser/hls_master_playlist.dart';
-import 'package:better_player/src/hls/hls_parser/hls_media_playlist.dart';
-import 'package:better_player/src/hls/hls_parser/hls_track_metadata_entry.dart';
-import 'package:better_player/src/hls/hls_parser/metadata.dart';
-import 'package:better_player/src/hls/hls_parser/mime_types.dart';
-import 'package:better_player/src/hls/hls_parser/playlist.dart';
-import 'package:better_player/src/hls/hls_parser/rendition.dart';
-import 'package:better_player/src/hls/hls_parser/scheme_data.dart';
-import 'package:better_player/src/hls/hls_parser/segment.dart';
-import 'package:better_player/src/hls/hls_parser/util.dart';
-import 'package:better_player/src/hls/hls_parser/variant.dart';
-import 'package:better_player/src/hls/hls_parser/variant_info.dart';
 import 'package:collection/collection.dart' show IterableExtension;
+import 'package:river_player/src/hls/hls_parser/drm_init_data.dart';
+import 'package:river_player/src/hls/hls_parser/exception.dart';
+import 'package:river_player/src/hls/hls_parser/format.dart';
+import 'package:river_player/src/hls/hls_parser/hls_master_playlist.dart';
+import 'package:river_player/src/hls/hls_parser/hls_media_playlist.dart';
+import 'package:river_player/src/hls/hls_parser/hls_track_metadata_entry.dart';
+import 'package:river_player/src/hls/hls_parser/metadata.dart';
+import 'package:river_player/src/hls/hls_parser/mime_types.dart';
+import 'package:river_player/src/hls/hls_parser/playlist.dart';
+import 'package:river_player/src/hls/hls_parser/rendition.dart';
+import 'package:river_player/src/hls/hls_parser/scheme_data.dart';
+import 'package:river_player/src/hls/hls_parser/segment.dart';
+import 'package:river_player/src/hls/hls_parser/util.dart';
+import 'package:river_player/src/hls/hls_parser/variant.dart';
+import 'package:river_player/src/hls/hls_parser/variant_info.dart';
 
 class HlsPlaylistParser {
   HlsPlaylistParser(this.masterPlaylist);

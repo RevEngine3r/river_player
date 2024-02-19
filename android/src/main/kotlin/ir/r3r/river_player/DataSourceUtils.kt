@@ -1,4 +1,4 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.net.Uri
 import com.google.android.exoplayer2.upstream.DataSource

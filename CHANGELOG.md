@@ -33,7 +33,7 @@
 * Added onTapDown handle for material and cupertino progress bar to handle show and hide of controls.
 * Fixed crash related to Android 12.
 * Fixed issue with full url of subtitle for HLS data source.
-* Fixed install page from docs.
+* Fixed install page from doc.
 * Fixed one of the showcase images.
 * Fixed video in list example.
 

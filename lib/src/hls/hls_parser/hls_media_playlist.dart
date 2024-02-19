@@ -1,6 +1,6 @@
-import 'package:better_player/src/hls/hls_parser/drm_init_data.dart';
-import 'package:better_player/src/hls/hls_parser/playlist.dart';
-import 'package:better_player/src/hls/hls_parser/segment.dart';
+import 'package:river_player/src/hls/hls_parser/drm_init_data.dart';
+import 'package:river_player/src/hls/hls_parser/playlist.dart';
+import 'package:river_player/src/hls/hls_parser/segment.dart';
 
 class HlsMediaPlaylist extends HlsPlaylist {
   HlsMediaPlaylist._({

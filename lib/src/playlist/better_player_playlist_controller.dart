@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'package:better_player/better_player.dart';
+
+import 'package:river_player/river_player.dart';
 
 ///Controller used to manage playlist player.
 class BetterPlayerPlaylistController {

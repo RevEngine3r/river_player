@@ -1,9 +1,10 @@
 import 'dart:async';
-import 'package:better_player/src/controls/better_player_progress_colors.dart';
-import 'package:better_player/src/core/better_player_controller.dart';
-import 'package:better_player/src/video_player/video_player.dart';
-import 'package:better_player/src/video_player/video_player_platform_interface.dart';
+
 import 'package:flutter/material.dart';
+import 'package:river_player/src/controls/better_player_progress_colors.dart';
+import 'package:river_player/src/core/better_player_controller.dart';
+import 'package:river_player/src/video_player/video_player.dart';
+import 'package:river_player/src/video_player/video_player_platform_interface.dart';
 
 class BetterPlayerCupertinoVideoProgressBar extends StatefulWidget {
   BetterPlayerCupertinoVideoProgressBar(

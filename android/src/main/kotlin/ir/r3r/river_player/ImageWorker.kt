@@ -1,4 +1,4 @@
-package com.jhomlala.better_player
+package ir.r3r.river_player
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -20,7 +20,7 @@ class ImageWorker(
 ) : Worker(context, params) {
     override fun doWork(): Result {
         return try {
-            val imageUrl = inputData.getString(BetterPlayerPlugin.URL_PARAMETER)
+            val imageUrl = inputData.getString(RiverPlayerPlugin.URL_PARAMETER)
                 ?: return Result.failure()
             val bitmap: Bitmap? = if (DataSourceUtils.isHTTP(Uri.parse(imageUrl))) {
                 getBitmapFromExternalURL(imageUrl)
@@ -35,7 +35,7 @@ class ImageWorker(
             val out = FileOutputStream(filePath)
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
             val data =
-                Data.Builder().putString(BetterPlayerPlugin.FILE_PATH_PARAMETER, filePath).build()
+                Data.Builder().putString(RiverPlayerPlugin.FILE_PATH_PARAMETER, filePath).build()
             Result.success(data)
         } catch (e: Exception) {
             e.printStackTrace()

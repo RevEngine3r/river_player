@@ -1,4 +1,4 @@
-import 'package:better_player/better_player.dart';
+import 'package:river_player/river_player.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'better_player_mock_controller.dart';
 import 'better_player_test_utils.dart';
@@ -14,7 +14,7 @@ void main() {
     () {
       setUp(
         () => {
-          TestDefaultBinaryMessengerBinding.instance!.defaultBinaryMessenger
+          TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
               .setMockMethodCallHandler(
                   mockMethodChannel.channel, mockMethodChannel.handle)
         },

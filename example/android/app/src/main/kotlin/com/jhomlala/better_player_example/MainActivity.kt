@@ -1,4 +1,4 @@
-package com.jhomlala.better_player_example
+package ir.r3r.river_player_example
 
 import android.content.Intent
 import android.os.Build
