@@ -1,10 +1,11 @@
-name: better_player
-description: Advanced video player based on video_player and Chewie. It's solves many typical use cases and it's easy to run.
-version: 0.0.83
+name: river_player
+description: Same good old Better Player but with updates and fixes.
+version: 0.0.1
 # Disabled because of warning from analyzer
 # authors:
 #  - Jakub Homlala <jhomlala@gmail.com>
-homepage: https://github.com/jhomlala/betterplayer
+#  - Saeed Rev <revengine3r@gmail.com>
+homepage: https://github.com/RevEngine3r/river_player
 documentation: https://jhomlala.github.io/betterplayer/
 
 environment:
@@ -34,7 +35,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.jhomlala.better_player
-        pluginClass: BetterPlayerPlugin
+        package: ir.r3r.river_player
+        pluginClass: RiverPlayerPlugin
       ios:
-        pluginClass: BetterPlayerPlugin
+        pluginClass: RiverPlayerPlugin
