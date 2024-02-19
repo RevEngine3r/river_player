@@ -12,9 +12,10 @@ Because the publisher of Better Player doesn't maintain it anymore.
 ✔️ Changed Gradle Wrapper version to v7.5  
 ✔️ Changed Gradle Build Tool version to v7.4.2  
 ✔️ Changed Kotlin Plugin version to v1.8.10  
+✔️ Refactoring and Deprecated Api replaces  
 
 **Features:**  
-✔️ Added Persian language support jhomlala/betterplayer#1250  
+✔️ Added Persian language support jhomlala/betterplayer#1250
 
 # River Player
 
