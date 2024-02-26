@@ -1,5 +1,3 @@
-
-
 class VariantInfo {
   VariantInfo({
     this.bitrate,

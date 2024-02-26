@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/logo.png">
 </p>
 
-This is the same good old Better Player with fixed and updates,
+This is the same good old Better Player with fixes and updates,
 Because the publisher of Better Player doesn't maintain it anymore.
 
 # Changes

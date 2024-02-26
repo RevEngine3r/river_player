@@ -47,7 +47,9 @@ class BetterPlayerService : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             notificationBuilder.setCategory(Notification.CATEGORY_SERVICE);
         }
+
         startForeground(foregroundNotificationId, notificationBuilder.build())
+
         return START_NOT_STICKY
     }
 
