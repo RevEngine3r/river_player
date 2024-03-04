@@ -2,7 +2,7 @@ group 'ir.r3r.river_player.better_player'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.exoPlayerVersion = "2.19.1"
+    ext.exoPlayerVersion = "1.1.1"
     ext.lifecycleVersion = "2.7.0"
     ext.annotationVersion = "1.7.1"
     ext.workVersion = "2.9.0"
@@ -53,17 +53,18 @@ android {
     }
 
     dependencies {
-        implementation "com.google.android.exoplayer:exoplayer-core:$exoPlayerVersion"
-        implementation "com.google.android.exoplayer:exoplayer-hls:$exoPlayerVersion"
-        implementation "com.google.android.exoplayer:exoplayer-dash:$exoPlayerVersion"
-        implementation "com.google.android.exoplayer:exoplayer-smoothstreaming:$exoPlayerVersion"
-        implementation "com.google.android.exoplayer:exoplayer-ui:$exoPlayerVersion"
-        implementation "com.google.android.exoplayer:extension-mediasession:$exoPlayerVersion"
+        implementation "androidx.media3:media3-exoplayer:$exoPlayerVersion"
+        implementation "androidx.media3:media3-exoplayer-hls:$exoPlayerVersion"
+        implementation "androidx.media3:media3-exoplayer-dash:$exoPlayerVersion"
+        implementation "androidx.media3:media3-exoplayer-smoothstreaming:$exoPlayerVersion"
+        implementation "androidx.media3:media3-ui:$exoPlayerVersion"
+        implementation "androidx.media3:media3-session:$exoPlayerVersion"
         implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
         implementation "androidx.lifecycle:lifecycle-common:$lifecycleVersion"
         implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
         implementation "androidx.annotation:annotation:$annotationVersion"
         implementation "androidx.work:work-runtime:$workVersion"
+        implementation "androidx.media:media:1.7.0"
     }
 }
 
