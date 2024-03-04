@@ -8,6 +8,7 @@ Because the publisher of Better Player doesn't maintain it anymore.
 # Changes
 
 **Fixes:**  
+✔️ Migrated to AndroidX Media3  
 ✔️ Dependency updates jhomlala/betterplayer#1291  
 ✔️ Changed Gradle Wrapper version to v7.5  
 ✔️ Changed Gradle Build Tool version to v7.4.2  
