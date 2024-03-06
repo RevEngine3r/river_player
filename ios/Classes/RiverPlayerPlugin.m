@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "BetterPlayerPlugin.h"
+#import "RPlayerPlugin.h"
 #import <river_player/river_player-Swift.h>
 
 #if !__has_feature(objc_arc)
