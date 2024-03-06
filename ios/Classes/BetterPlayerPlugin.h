@@ -11,7 +11,7 @@
 #import "BetterPlayer.h"
 #import <MediaPlayer/MediaPlayer.h>
 
-@interface BetterPlayerPlugin : NSObject <FlutterPlugin, FlutterPlatformViewFactory>
+@interface RiverPlayerPlugin : NSObject <FlutterPlugin, FlutterPlatformViewFactory>
 
 @property(readonly, weak, nonatomic) NSObject<FlutterBinaryMessenger>* messenger;
 @property(readonly, strong, nonatomic) NSMutableDictionary* players;
