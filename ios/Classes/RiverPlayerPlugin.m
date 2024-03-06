@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#import "RPlayerPlugin.h"
+#import "RiverPlayerPlugin.h"
 #import <river_player/river_player-Swift.h>
 
 #if !__has_feature(objc_arc)
@@ -10,7 +10,7 @@
 #endif
 
 
-@implementation BetterPlayerPlugin
+@implementation RiverPlayerPlugin
 NSMutableDictionary* _dataSourceDict;
 NSMutableDictionary*  _timeObserverIdDict;
 NSMutableDictionary*  _artworkImageDict;
@@ -25,7 +25,7 @@ bool _remoteCommandsInitialized = false;
     FlutterMethodChannel* channel =
     [FlutterMethodChannel methodChannelWithName:@"better_player_channel"
                                 binaryMessenger:[registrar messenger]];
-    BetterPlayerPlugin* instance = [[BetterPlayerPlugin alloc] initWithRegistrar:registrar];
+    RiverPlayerPlugin* instance = [[RiverPlayerPlugin alloc] initWithRegistrar:registrar];
     [registrar addMethodCallDelegate:instance channel:channel];
     //[registrar publish:instance];
     [registrar registerViewFactory:instance withId:@"com.jhomlala/better_player"];
@@ -66,7 +66,7 @@ bool _remoteCommandsInitialized = false;
     return [FlutterStandardMessageCodec sharedInstance];
 }
 
-#pragma mark - BetterPlayerPlugin class
+#pragma mark - RiverPlayerPlugin class
 - (int)newTextureId {
     texturesCount += 1;
     return texturesCount;
