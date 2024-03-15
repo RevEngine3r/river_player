@@ -1,14 +1,22 @@
 name: Publish to pub.dev
 
 on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'
+  release:
+    types: [ published ]
 
 jobs:
   publish:
-    permissions:
-      id-token: write
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
-    with:
-      environment: pub.dev
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Publish
+        uses: sakebook/actions-flutter-pub-publisher@v1.4.1
+        with:
+          credential: ${{ secrets.CREDENTIAL_JSON }}
+          flutter_package: true
+          skip_test: true
+          dry_run: true
+          environment: pub.dev
