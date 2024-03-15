@@ -14,13 +14,13 @@ Because the publisher of Better Player doesn't maintain it anymore.
 ✔️ Changed Gradle Build Tool version to v7.4.2  
 ✔️ Changed Kotlin Plugin version to v1.8.10  
 ✔️ Refactoring and Deprecated Api replaces  
+✔️ iOS Fix RevEngine3r/river_player/pull/1  
 
 **Features:**  
 ✔️ Added Persian language support jhomlala/betterplayer#1250
 
 # River Player
 
-[![pub package](https://img.shields.io/pub/v/better_player.svg)](https://pub.dartlang.org/packages/better_player)
 [![pub package](https://img.shields.io/github/license/jhomlala/betterplayer.svg?style=flat)](https://github.com/RevEngine3r/river_player)
 [![pub package](https://img.shields.io/badge/platform-flutter-blue.svg)](https://github.com/RevEngine3r/river_player)
 

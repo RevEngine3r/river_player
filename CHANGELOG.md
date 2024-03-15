@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Make it work for iOS (https://github.com/RevEngine3r/river_player/pull/1).
+
 ## 0.1.0
 
 * Migrated to AndroidX Media3.
