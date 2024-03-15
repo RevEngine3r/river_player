@@ -34,7 +34,7 @@ class SchemeData {
       );
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     if (other is SchemeData) {
       return other.mimeType == mimeType &&
           other.licenseServerUrl == licenseServerUrl &&
