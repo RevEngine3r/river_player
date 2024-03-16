@@ -1,3 +1,7 @@
+# 0.1.3
+
+* Links fixed.
+
 # 0.1.2
 
 * Lower package size.

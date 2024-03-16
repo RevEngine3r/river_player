@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/logo.webp">
+<img src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/logo_result.webp">
 </p>
 
 This is the same good old Better Player with fixes and updates,
@@ -30,56 +30,56 @@ easy to run.
 <table>
    <tr>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/1.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/1_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/2.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/2_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/3.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/3_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/4.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/4_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/5.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/5_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/6.webp">
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/7.webp">
-      </td>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/8.webp">
-      </td>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/9.webp">
-      </td>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/10.webp">
-      </td>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/11.webp">
-      </td>
-      <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/12.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/6_result.webp">
       </td>
    </tr>
    <tr>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/13.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/7_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/14.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/8_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/15.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/9_result.webp">
       </td>
       <td>
-         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/16.webp">
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/10_result.webp">
+      </td>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/11_result.webp">
+      </td>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/12_result.webp">
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/13_result.webp">
+      </td>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/14_result.webp">
+      </td>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/15_result.webp">
+      </td>
+      <td>
+         <img width="250px" src="https://raw.githubusercontent.com/RevEngine3r/river_player/master/media/16_result.webp">
       </td>
     </tr>	
 </table>
