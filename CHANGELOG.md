@@ -1,3 +1,7 @@
+# 0.1.2
+
+* Lower package size.
+
 ## 0.1.1
 
 * Make it work for iOS (https://github.com/RevEngine3r/river_player/pull/1).
