@@ -249,13 +249,6 @@ bool _remoteCommandsInitialized = false;
     if (player == _notificationPlayer){
         _notificationPlayer = NULL;
         _remoteCommandsInitialized = false;
-        MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
-        [commandCenter.togglePlayPauseCommand removeTarget:self];
-        [commandCenter.playCommand removeTarget:self];
-        [commandCenter.pauseCommand removeTarget:self];
-        if (@available(iOS 9.1, *)) {
-            [commandCenter.changePlaybackPositionCommand removeTarget:self];
-        }
     }
     NSString* key = [self getTextureId:player];
     id _timeObserverId = _timeObserverIdDict[key];
