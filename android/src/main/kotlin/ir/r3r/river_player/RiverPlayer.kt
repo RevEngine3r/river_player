@@ -705,11 +705,12 @@ internal class RiverPlayer(
                 }
             })
             mediaSession.isActive = true
+            val sessionId = System.currentTimeMillis()
             exoPlayer?.let { player ->
                 MediaSession.Builder(
                     context,
                     player
-                ).build()
+                ).setId(sessionId.toString()).build()
             }?.setPlayer(exoPlayer)
             this.mediaSession = mediaSession
             return mediaSession
