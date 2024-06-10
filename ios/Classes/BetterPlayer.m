@@ -471,7 +471,8 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
         if (_overriddenDuration > 0 && duration > _overriddenDuration){
             _player.currentItem.forwardPlaybackEndTime = CMTimeMake(_overriddenDuration/1000, 1);
         }
-
+        bool isLiveStream = _player.currentItem.asset.duration.timescale == 0;
+        NSLog(@"Video livestreaming: %d", isLiveStream);
         _isInitialized = true;
         [self updatePlayingState];
         _eventSink(@{
@@ -479,6 +480,7 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
             @"duration" : @([self duration]),
             @"width" : @(fabs(realSize.width) ? : width),
             @"height" : @(fabs(realSize.height) ? : height),
+            @"isLiveStream": @(isLiveStream),
             @"key" : _key
         });
     }

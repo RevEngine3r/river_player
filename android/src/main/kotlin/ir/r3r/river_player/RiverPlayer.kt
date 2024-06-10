@@ -661,6 +661,7 @@ internal class RiverPlayer(
             event["event"] = "initialized"
             event["key"] = key
             event["duration"] = getDuration()
+            event["isLiveStream"] = exoPlayer?.isCurrentWindowLive
             if (exoPlayer?.videoFormat != null) {
                 val videoFormat = exoPlayer.videoFormat
                 var width = videoFormat?.width
