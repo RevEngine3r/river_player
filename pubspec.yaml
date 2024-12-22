@@ -9,8 +9,8 @@ homepage: https://github.com/RevEngine3r/river_player
 documentation: https://jhomlala.github.io/betterplayer/
 
 environment:
-  sdk: '>=2.15.0 <4.0.0'
-  flutter: ">=2.2.3"
+  sdk: '>=3.2.0 <4.0.0'
+  flutter: ">=3.16.0"
 
 dependencies:
   flutter:
@@ -18,7 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   wakelock_plus: ^1.1.4
   meta: ^1.7.0
-  flutter_widget_from_html_core: ^0.14.11
+  flutter_widget_from_html_core: ^0.15.2
   visibility_detector: ^0.4.0+2
   path_provider: ^2.0.10
   collection: ^1.16.0
