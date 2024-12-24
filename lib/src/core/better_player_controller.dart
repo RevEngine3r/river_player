@@ -778,7 +778,15 @@ class BetterPlayerController {
     if (currentVideoPlayerValue.initialized &&
         !_hasCurrentDataSourceInitialized) {
       _hasCurrentDataSourceInitialized = true;
-      _postEvent(BetterPlayerEvent(BetterPlayerEventType.initialized));
+      debugPrint(
+          "BetterPlayerController: Video initialized ${currentVideoPlayerValue.isLiveStream}");
+      _postEvent(
+          BetterPlayerEvent(BetterPlayerEventType.initialized, parameters: {
+        "duration": currentVideoPlayerValue.duration,
+        "size": currentVideoPlayerValue.size,
+        "key": _betterPlayerGlobalKey,
+        "isLiveStream": currentVideoPlayerValue.isLiveStream,
+      }));
     }
     if (currentVideoPlayerValue.isPip) {
       _wasInPipMode = true;

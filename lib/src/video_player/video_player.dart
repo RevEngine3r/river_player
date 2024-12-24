@@ -34,6 +34,7 @@ class VideoPlayerValue {
     this.speed = 1.0,
     this.errorDescription,
     this.isPip = false,
+    this.isLiveStream = false,
   });
 
   /// Returns an instance with a `null` [Duration].
@@ -88,6 +89,9 @@ class VideoPlayerValue {
   ///Is in Picture in Picture Mode
   final bool isPip;
 
+  /// Is the video a live stream.
+  final bool isLiveStream;
+
   /// Indicates whether or not the video has been loaded and is ready to play.
   bool get initialized => duration != null;
 
@@ -123,6 +127,7 @@ class VideoPlayerValue {
     String? errorDescription,
     double? speed,
     bool? isPip,
+    bool? isLiveStream,
   }) {
     return VideoPlayerValue(
       duration: duration ?? this.duration,
@@ -137,6 +142,7 @@ class VideoPlayerValue {
       speed: speed ?? this.speed,
       errorDescription: errorDescription ?? this.errorDescription,
       isPip: isPip ?? this.isPip,
+      isLiveStream: isLiveStream ?? this.isLiveStream,
     );
   }
 
@@ -153,6 +159,7 @@ class VideoPlayerValue {
         'isLooping: $isLooping, '
         'isBuffering: $isBuffering, '
         'volume: $volume, '
+        'isLiveStream: $isLiveStream, '
         'errorDescription: $errorDescription)';
   }
 }
@@ -213,12 +220,15 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
         return;
       }
       videoEventStreamController.add(event);
+
       switch (event.eventType) {
         case VideoEventType.initialized:
+          debugPrint(
+              "Event player controller ${event.duration} ${event.isLiveStream}");
           value = value.copyWith(
-            duration: event.duration,
-            size: event.size,
-          );
+              duration: event.duration,
+              size: event.size,
+              isLiveStream: event.isLiveStream);
           _initializingCompleter.complete(null);
           _applyPlayPause();
           break;

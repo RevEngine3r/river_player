@@ -355,6 +355,7 @@ class MethodChannelVideoPlayer extends VideoPlayerPlatform {
             key: key,
             duration: Duration(milliseconds: map['duration'] as int),
             size: size,
+            isLiveStream: map['isLiveStream'] as bool,
           );
         case 'completed':
           return VideoEvent(
