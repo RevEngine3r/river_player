@@ -522,10 +522,6 @@ class BetterPlayerController {
           throw ArgumentError("Couldn't create file from memory.");
         }
         break;
-
-      default:
-        throw UnimplementedError(
-            "${betterPlayerDataSource.type} is not implemented");
     }
     await _initializeVideo();
   }

@@ -1,6 +1,6 @@
 name: river_player
 description: Same good old Better Player but it will get updated and fixed.
-version: 0.1.3
+version: 0.1.4
 # Disabled because of warning from analyzer
 # authors:
 #  - Jakub Homlala <jhomlala@gmail.com>
