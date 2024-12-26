@@ -380,6 +380,7 @@ class VideoEvent {
     this.size,
     this.buffered,
     this.position,
+    this.isLiveStream,
   });
 
   /// The type of the event.
@@ -407,6 +408,11 @@ class VideoEvent {
 
   ///Seek position
   final Duration? position;
+
+  ///Is livestream
+  ///
+  /// Only used if [eventType] is [VideoEventType.initialized].
+  final bool? isLiveStream;
 
   @override
   bool operator ==(Object other) {

@@ -471,7 +471,8 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
         if (_overriddenDuration > 0 && duration > _overriddenDuration){
             _player.currentItem.forwardPlaybackEndTime = CMTimeMake(_overriddenDuration/1000, 1);
         }
-
+        bool isLiveStream = _player.currentItem.asset.duration.timescale == 0;
+        NSLog(@"Video livestreaming: %d", isLiveStream);
         _isInitialized = true;
         [self updatePlayingState];
         _eventSink(@{
@@ -479,6 +480,7 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
             @"duration" : @([self duration]),
             @"width" : @(fabs(realSize.width) ? : width),
             @"height" : @(fabs(realSize.height) ? : height),
+            @"isLiveStream": @(isLiveStream),
             @"key" : _key
         });
     }
@@ -551,10 +553,8 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
         result([FlutterError errorWithCode:@"unsupported_speed"
                                    message:@"Speed must be >= 0.0 and <= 2.0"
                                    details:nil]);
-    } else if ((speed > 1.0 && _player.currentItem.canPlayFastForward) ||
-               (speed < 1.0 && _player.currentItem.canPlaySlowForward)) {
-        _playerRate = speed;
-        result(nil);
+    } else if ((speed > 1.0) || (speed < 1.0)) { 
+        _playerRate = speed; result(nil); 
     } else {
         if (speed > 1.0) {
             result([FlutterError errorWithCode:@"unsupported_fast_forward"

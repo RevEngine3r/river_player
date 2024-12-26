@@ -121,7 +121,7 @@ bool _remoteCommandsInitialized = false;
 
 
 - (void) setupRemoteCommands:(BetterPlayer*)player  {
-    if (_remoteCommandsInitialized){
+    if (_remoteCommandsInitialized || _notificationPlayer == nil){
         return;
     }
     MPRemoteCommandCenter *commandCenter = [MPRemoteCommandCenter sharedCommandCenter];
@@ -135,7 +135,7 @@ bool _remoteCommandsInitialized = false;
     }
 
     [commandCenter.togglePlayPauseCommand addTargetWithHandler: ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        if (_notificationPlayer != [NSNull null]){
+        if (_notificationPlayer != nil){
             if (_notificationPlayer.isPlaying){
                 _notificationPlayer.eventSink(@{@"event" : @"play"});
             } else {
@@ -146,14 +146,14 @@ bool _remoteCommandsInitialized = false;
     }];
 
     [commandCenter.playCommand addTargetWithHandler: ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        if (_notificationPlayer != [NSNull null]){
+        if (_notificationPlayer != nil){
             _notificationPlayer.eventSink(@{@"event" : @"play"});
         }
         return MPRemoteCommandHandlerStatusSuccess;
     }];
 
     [commandCenter.pauseCommand addTargetWithHandler: ^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-        if (_notificationPlayer != [NSNull null]){
+        if (_notificationPlayer != nil){
             _notificationPlayer.eventSink(@{@"event" : @"pause"});
         }
         return MPRemoteCommandHandlerStatusSuccess;
@@ -163,7 +163,7 @@ bool _remoteCommandsInitialized = false;
 
     if (@available(iOS 9.1, *)) {
         [commandCenter.changePlaybackPositionCommand addTargetWithHandler:^MPRemoteCommandHandlerStatus(MPRemoteCommandEvent * _Nonnull event) {
-            if (_notificationPlayer != [NSNull null]){
+            if (_notificationPlayer != nil){
                 MPChangePlaybackPositionCommandEvent * playbackEvent = (MPChangePlaybackRateCommandEvent * ) event;
                 CMTime time = CMTimeMake(playbackEvent.positionTime, 1);
                 int64_t millis = [BetterPlayerTimeUtils FLTCMTimeToMillis:(time)];
@@ -250,15 +250,15 @@ bool _remoteCommandsInitialized = false;
         _notificationPlayer = NULL;
         _remoteCommandsInitialized = false;
     }
-    NSString* key =  [self getTextureId:player];
+    NSString* key = [self getTextureId:player];
     id _timeObserverId = _timeObserverIdDict[key];
-    [_timeObserverIdDict removeObjectForKey: key];
+    [_timeObserverIdDict removeObjectForKey:key];
     [_artworkImageDict removeObjectForKey:key];
-    if (_timeObserverId){
+    if (_timeObserverId) {
         [player.player removeTimeObserver:_timeObserverId];
         _timeObserverId = nil;
     }
-    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo =  @{};
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = @{};
 }
 
 - (void) stopOtherUpdateListener: (BetterPlayer*) player{
