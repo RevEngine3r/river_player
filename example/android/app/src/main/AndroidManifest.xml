@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ir.r3r.river_player_example">
 
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="Better Player Example"
@@ -29,7 +30,13 @@
             android:exported="true"
             android:foregroundServiceType="mediaPlayback"
             android:stopWithTask="false" />
-
+        <receiver
+            android:name="androidx.media.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />

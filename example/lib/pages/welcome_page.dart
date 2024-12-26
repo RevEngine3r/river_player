@@ -52,7 +52,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Better Player Example"),
+        title: Text("River Player Example"),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -60,7 +60,7 @@ class _WelcomePageState extends State<WelcomePage> {
           children: [
             const SizedBox(height: 8),
             Image.asset(
-              "assets/logo.png",
+              "assets/logo_result.webp",
               height: 200,
               width: 200,
             ),

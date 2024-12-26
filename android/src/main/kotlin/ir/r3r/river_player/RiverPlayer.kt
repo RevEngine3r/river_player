@@ -715,7 +715,6 @@ internal class RiverPlayer(
             return mediaSession
         }
         return null
-
     }
 
     fun onPictureInPictureStatusChanged(inPip: Boolean) {
